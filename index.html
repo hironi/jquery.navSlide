@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jquery.navSlide 水平导航背景动画效果</title>
+<style>
+* { padding: 0; margin: 0; }
+li { list-style: none; }
+a{ text-decoration: none; }
+
+ul { margin: 30px auto; width: 800px; }
+li { float: left; width:100px; height: 40px; line-height: 40px; text-align: center; cursor: pointer;}
+</style>
+</head>
+<body>
+  <ul id="nav"></ul>
+
+  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+  <script src="jquery.navSlide.js"></script>
+  <script>
+    $(function(){
+      
+      var list = ['首页', '频道页', '模板', '单页应用', '论坛', '关于我们'];
+      $('#nav').append(function(){
+        return list.map(function(v){
+          return '<li>' + v + '</li>'
+        }).join('');
+      }).navSlide();
+      
+    })
+  </script>
+</body>
+</html>
