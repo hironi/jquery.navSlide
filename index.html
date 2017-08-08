@@ -21,11 +21,8 @@ li { float: left; width:100px; height: 40px; line-height: 40px; text-align: cent
     $(function(){
       
       var list = ['首页', '频道页', '模板', '单页应用', '论坛', '关于我们'];
-      $('#nav').append(function(){
-        return list.map(function(v){
-          return '<li>' + v + '</li>'
-        }).join('');
-      }).navSlide();
+
+      $('#nav').navSlide(list);
       
     })
   </script>
