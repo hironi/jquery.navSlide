@@ -5,8 +5,15 @@ jQuery插件，水平导航背景动画效果
 
 ### 如何使用
 
+```html
+
+<ul id="box"></ul>
+
+```
+
 ```javascript
 
-$(boxSelector).navSlide();
+var list = ['首页', '频道', '促销', '关于我们']
+$('#box').navSlide(list);
 
 ```
