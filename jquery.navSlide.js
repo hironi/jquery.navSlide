@@ -6,6 +6,7 @@
   ** @param opt        [可选] <Obj>
   **   - index:        [可选] <Num> 默认0  当前高亮的item的索引值
   **   - style:        [可选] <Obj> 高亮背景的样式
+  **   - float:        [可选] <Num> 默认10 鼠标划过时的左右晃动幅度
   **   - click:        [可选] <Func> 点击每个item时执行的函数，参数为点击item的索引值
   **   - mouseenter:   [可选] <Func> 鼠标经过每个item时执行的函数，参数为点击item的索引值(该函数会在动画执行完后执行)
   **
@@ -24,6 +25,7 @@
         index: 0, //高亮item的索引值
         style: {
           position: 'absolute',
+          float: 10,
           zIndex: -1,
           background: '#eee',
           left: index*itemWidth + 'px'
@@ -55,12 +57,11 @@
       }
 
       function slider(i, fn){
-        var floatWitch = 10,
-            turnWidth = i*itemWidth,
+        var turnWidth = i*itemWidth,
             turnRight = position > turnWidth ? true : false; //判断是否是向右滚动，false则为向左滚动
         position = turnWidth;
         $backdrop.stop().animate({
-          left: turnRight ? position - floatWitch : position + floatWitch
+          left: turnRight ? position - float : position + float
         }, 300, function(){
           $backdrop.stop().animate({
             left: position
