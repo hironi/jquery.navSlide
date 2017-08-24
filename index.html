@@ -25,7 +25,11 @@ li[data-sign]{
       
       var list = ['首页', '频道页', '模板', '单页应用', '论坛', '关于我们'];
 
-      $('#nav').navSlide(list);
+      $('#nav').navSlide(list, {
+        data: ['1', '2', '3', '4', '5', '6'],
+        data3: ['111', '222', '333', '444', '555', '666'],
+        itemTag: '<li data-id="{$data}"><a href="{$data3}">'
+      });
       
     })
   </script>
